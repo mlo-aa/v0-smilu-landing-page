@@ -22,7 +22,7 @@ export default function ArtShelf() {
         <Link href="/dashboard">
           <div className="w-12 h-12 bg-[#8b6f47] rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer p-1">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%285%29-G4uEd.png"
+              src="https://github.com/mlo-aa/v0-smilu-landing-page/blob/0b52ed9d5ea49d74d914e1b3e83c7d0929edb642/public/imagenes/oso%20topleftrow.png"
               alt="Teddy Bear"
               className="w-full h-full object-contain"
             />
