@@ -21,7 +21,11 @@ export default function Home() {
         <div className="px-6 py-8">
           {/* Header */}
           <header className="flex items-center justify-between mb-16">
-            <div className="text-[#8b6f47] text-4xl font-bold">Smilu</div>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-75jPo6UeWy3HJc1BvNOXe3xsZkNOUZ.png"
+              alt="Smilu"
+              className="h-16 w-auto"
+            />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="flex flex-col gap-1 p-2 hover:opacity-70 transition-opacity"
@@ -152,7 +156,13 @@ export default function Home() {
 
             {/* Copyright text */}
             <p className="text-[#8b6f47] text-sm text-center">
-              © 2025 Smilu • ReFi for childhood • On-chain proof of joy
+              © 2025{" "}
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-75jPo6UeWy3HJc1BvNOXe3xsZkNOUZ.png"
+                alt="Smilu"
+                className="inline h-4 w-auto"
+              />{" "}
+              • ReFi for childhood • On-chain proof of joy
             </p>
           </div>
         </div>

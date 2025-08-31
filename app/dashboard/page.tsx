@@ -7,6 +7,10 @@ import { useState } from "react"
 export default function Dashboard() {
   const [activeModal, setActiveModal] = useState<string | null>(null)
   const [activeCoupon, setActiveCoupon] = useState<string | null>(null)
+  const [showBuyModal, setShowBuyModal] = useState(false)
+  const [showPaymentConfirmed, setShowPaymentConfirmed] = useState(false)
+  const [tokenAmount, setTokenAmount] = useState(1)
+  const [showRolesPopup, setShowRolesPopup] = useState(false)
 
   const modalContent = {
     "Child History":
@@ -45,24 +49,47 @@ export default function Dashboard() {
     setActiveCoupon(null)
   }
 
+  const openBuyModal = () => {
+    setShowBuyModal(true)
+  }
+
+  const closeBuyModal = () => {
+    setShowBuyModal(false)
+    setTokenAmount(1)
+  }
+
+  const handleConfirmPurchase = () => {
+    setShowBuyModal(false)
+    setShowPaymentConfirmed(true)
+  }
+
+  const closePaymentConfirmed = () => {
+    setShowPaymentConfirmed(false)
+  }
+
+  const toggleRolesPopup = () => {
+    setShowRolesPopup(!showRolesPopup)
+  }
+
+  const closeRolesPopup = () => {
+    setShowRolesPopup(false)
+  }
+
   return (
     <div className="min-h-screen bg-[#f5f3f0] flex">
       {/* Left Sidebar */}
-      <div className="w-20 bg-white border-r border-gray-200 flex flex-col items-center py-8 space-y-8">
+      <div className="w-20 bg-white border-r border-gray-200 flex flex-col items-center py-8 space-y-8 relative">
         {/* Teddy Bear Icon */}
-        <div className="w-12 h-12 bg-[#8b6f47] rounded-lg flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="8" cy="8" r="3" fill="white" />
-            <circle cx="16" cy="8" r="3" fill="white" />
-            <circle cx="12" cy="14" r="6" fill="white" />
-            <circle cx="10" cy="12" r="1" fill="#8b6f47" />
-            <circle cx="14" cy="12" r="1" fill="#8b6f47" />
-            <path d="M11 15 Q12 16 13 15" stroke="#8b6f47" strokeWidth="1" fill="none" />
-          </svg>
+        <div className="w-12 h-12 bg-[#8b6f47] rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer p-1">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%285%29-G4uEd.png"
+            alt="Teddy Bear"
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Gift Box Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="3" y="8" width="18" height="12" rx="2" stroke="gray" strokeWidth="2" fill="none" />
             <path d="M12 8V20" stroke="gray" strokeWidth="2" />
@@ -71,52 +98,92 @@ export default function Dashboard() {
         </div>
 
         {/* Palette Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="gray" strokeWidth="2" fill="none" />
-            <circle cx="8" cy="8" r="2" fill="gray" />
-            <circle cx="16" cy="8" r="2" fill="gray" />
-            <circle cx="8" cy="16" r="2" fill="gray" />
-          </svg>
-        </div>
+        <Link href="/art-shelf">
+          <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="gray" strokeWidth="2" fill="none" />
+              <circle cx="8" cy="8" r="2" fill="gray" />
+              <circle cx="16" cy="8" r="2" fill="gray" />
+              <circle cx="8" cy="16" r="2" fill="gray" />
+            </svg>
+          </div>
+        </Link>
 
         {/* Star with Podium Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon
-              points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
-              stroke="gray"
-              strokeWidth="2"
-              fill="none"
-            />
-            <rect x="8" y="18" width="8" height="4" stroke="gray" strokeWidth="2" fill="none" />
-          </svg>
-        </div>
+        <Link href="/leaderboard">
+          <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon
+                points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
+                stroke="gray"
+                strokeWidth="2"
+                fill="none"
+              />
+              <rect x="8" y="18" width="8" height="4" stroke="gray" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+        </Link>
 
         {/* Spacer */}
         <div className="flex-1"></div>
 
         {/* User/Settings Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="4" stroke="gray" strokeWidth="2" fill="none" />
-            <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="gray" strokeWidth="2" />
-          </svg>
+        <div className="relative">
+          <div
+            onClick={toggleRolesPopup}
+            className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="8" r="4" stroke="gray" strokeWidth="2" fill="none" />
+              <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="gray" strokeWidth="2" />
+            </svg>
+          </div>
+
+          {/* Roles Popup */}
+          {showRolesPopup && (
+            <div className="absolute left-16 bottom-0 bg-white border-2 border-gray-200 rounded-xl shadow-lg p-4 min-w-[200px] z-50">
+              <h3 className="text-[#8b6f47] font-semibold text-lg mb-3">Roles</h3>
+              <div className="space-y-2">
+                <Link href="/the-first-smile" onClick={closeRolesPopup}>
+                  <div className="w-full text-left px-4 py-3 text-[#8b6f47] hover:bg-[#bbdce5] rounded-lg transition-colors duration-200 cursor-pointer">
+                    The First Smile
+                  </div>
+                </Link>
+                <Link href="/smile-builder" onClick={closeRolesPopup}>
+                  <div className="w-full text-left px-4 py-3 text-[#8b6f47] hover:bg-[#bbdce5] rounded-lg transition-colors duration-200 cursor-pointer">
+                    Smile Builder
+                  </div>
+                </Link>
+                <Link href="/ambassador-of-joy" onClick={closeRolesPopup}>
+                  <div className="w-full text-left px-4 py-3 text-[#8b6f47] hover:bg-[#bbdce5] rounded-lg transition-colors duration-200 cursor-pointer">
+                    Ambassador of joy
+                  </div>
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
       {/* Main Content */}
       <div
-        className={`flex-1 flex flex-col ${activeModal || activeCoupon ? "blur-sm" : ""} transition-all duration-300`}
+        className={`flex-1 flex flex-col ${activeModal || activeCoupon || showBuyModal || showPaymentConfirmed ? "blur-sm" : ""} transition-all duration-300`}
+        onClick={showRolesPopup ? closeRolesPopup : undefined}
       >
         {/* Header */}
         <header className="flex items-center justify-between px-8 py-6">
-          <Link href="/" className="text-[#8b6f47] text-4xl font-bold">
-            Smilu
+          <Link href="/" className="block">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-75jPo6UeWy3HJc1BvNOXe3xsZkNOUZ.png"
+              alt="Smilu"
+              className="h-16 w-auto"
+            />
           </Link>
-          <Button className="bg-[#b8e6b8] hover:bg-[#a8d6a8] text-[#4a5c4a] px-6 py-2 rounded-full text-sm font-medium">
-            Log-In
-          </Button>
+          <Link href="/login">
+            <Button className="bg-[#b8e6b8] hover:bg-[#a8d6a8] text-[#4a5c4a] px-6 py-2 rounded-full text-sm font-medium">
+              Log-In
+            </Button>
+          </Link>
         </header>
 
         {/* Main Content Area */}
@@ -140,7 +207,10 @@ export default function Dashboard() {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4 mb-12">
-            <Button className="bg-[#a8d5d8] hover:bg-[#96c9cc] text-white px-8 py-3 rounded-full text-lg font-medium flex items-center gap-2">
+            <Button
+              onClick={openBuyModal}
+              className="bg-[#a8d5d8] hover:bg-[#96c9cc] text-white px-8 py-3 rounded-full text-lg font-medium flex items-center gap-2"
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
                 <path d="M12 8V20" stroke="currentColor" strokeWidth="2" />
@@ -227,7 +297,13 @@ export default function Dashboard() {
         {/* Footer */}
         <footer className="px-8 py-6">
           <p className="text-[#8b6f47] text-sm text-center">
-            © 2025 Smilu • ReFi for childhood • On-chain proof of joy
+            © 2025{" "}
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-75jPo6UeWy3HJc1BvNOXe3xsZkNOUZ.png"
+              alt="Smilu"
+              className="inline h-4 w-auto"
+            />{" "}
+            • ReFi for childhood • On-chain proof of joy
           </p>
         </footer>
       </div>
@@ -331,7 +407,13 @@ export default function Dashboard() {
                       <h3 className="text-sm font-medium opacity-90">Reader's Day</h3>
                       <h4 className="text-xs opacity-75">Keep celebrating!</h4>
                     </div>
-                    <div className="bg-white text-[#8b6f47] px-2 py-1 rounded text-xs font-bold">SMILU</div>
+                    <div className="bg-white text-[#55361e] px-2 py-1 rounded text-xs font-bold flex items-center">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-75jPo6UeWy3HJc1BvNOXe3xsZkNOUZ.png"
+                        alt="SMILU"
+                        className="h-3 w-auto"
+                      />
+                    </div>
                   </div>
 
                   <div className="text-center mb-4">
@@ -372,7 +454,13 @@ export default function Dashboard() {
                       <h3 className="text-sm font-medium opacity-90">THE GIFTS</h3>
                       <h4 className="text-lg font-bold">Voucher</h4>
                     </div>
-                    <div className="bg-white text-[#8b6f47] px-2 py-1 rounded text-xs font-bold">SMILU</div>
+                    <div className="bg-white text-[#55361e] px-2 py-1 rounded text-xs font-bold flex items-center">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-75jPo6UeWy3HJc1BvNOXe3xsZkNOUZ.png"
+                        alt="SMILU"
+                        className="h-3 w-auto"
+                      />
+                    </div>
                   </div>
 
                   <div className="text-center mb-4">
@@ -396,6 +484,161 @@ export default function Dashboard() {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Buy Token Modal */}
+      {showBuyModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-transparent backdrop-blur-sm" onClick={closeBuyModal}></div>
+
+          <div className="relative bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl border-2 border-gray-200">
+            <button
+              onClick={closeBuyModal}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6l12 12" stroke="#8b6f47" strokeWidth="2" />
+              </svg>
+            </button>
+
+            <h3 className="text-[#8b6f47] text-2xl font-bold mb-6 text-center">Buy Tokens</h3>
+
+            <div className="mb-6">
+              <label className="block text-[#8b6f47] text-sm font-medium mb-2">
+                How many tokens would you like to buy?
+              </label>
+              <input
+                type="number"
+                min="1"
+                value={tokenAmount}
+                onChange={(e) => setTokenAmount(Math.max(1, Number.parseInt(e.target.value) || 1))}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#a8d5d8] focus:outline-none text-[#8b6f47] text-lg font-medium text-center"
+              />
+              <p className="text-gray-500 text-sm mt-2 text-center">
+                {tokenAmount} token{tokenAmount !== 1 ? "s" : ""} = {tokenAmount} toy{tokenAmount !== 1 ? "s" : ""}{" "}
+                delivered
+              </p>
+            </div>
+
+            <Button
+              onClick={handleConfirmPurchase}
+              className="w-full bg-[#8b6f47] hover:bg-[#6b5537] text-white py-3 rounded-lg text-lg font-medium"
+            >
+              Confirm Purchase
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Payment Confirmation Modal */}
+      {showPaymentConfirmed && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-transparent backdrop-blur-sm" onClick={closePaymentConfirmed}></div>
+
+          <div className="relative bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl border-2 border-gray-200">
+            <button
+              onClick={closePaymentConfirmed}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6l12 12" stroke="#8b6f47" strokeWidth="2" />
+              </svg>
+            </button>
+
+            <div className="text-center">
+              <h3 className="text-[#8b6f47] text-2xl font-bold mb-6">Success</h3>
+
+              {/* Green Checkmark */}
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="#22c55e"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <h4 className="text-[#8b6f47] text-xl font-semibold mb-2">Payment Confirmed</h4>
+              <p className="text-gray-600 text-sm mb-8">
+                {tokenAmount} Toy{tokenAmount !== 1 ? "s" : ""} to be delivered in Costa Rica • On-chain receipt created
+              </p>
+
+              {/* NFT Section */}
+              <div className="mb-6">
+                <p className="text-[#8b6f47] text-sm font-medium mb-3 text-left">Your NFT</p>
+                <div className="bg-gradient-to-r from-[#b8e6b8] to-[#a8d5d8] rounded-xl p-4 flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                        fill="#8b6f47"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="text-[#8b6f47] font-semibold">NFT • "Sofia"</div>
+                    <div className="text-[#6b5537] text-sm">
+                      Sofia's drawing • #{Math.floor(Math.random() * 1000) + 200}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-xs mt-2 text-left">
+                  A unique drawing minted to your wallet as a proof of impact.
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3 mb-6">
+                <Button className="flex-1 bg-[#8b6f47] hover:bg-[#6b5537] text-white py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Save
+                </Button>
+                <Button
+                  onClick={() => {
+                    closePaymentConfirmed()
+                    openModal("Perks")
+                  }}
+                  className="flex-1 bg-gray-100 hover:bg-gray-200 text-[#8b6f47] py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="4" width="20" height="12" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
+                    <rect x="4" y="8" width="4" height="4" fill="currentColor" />
+                  </svg>
+                  View perks
+                </Button>
+              </div>
+
+              {/* Transaction Details */}
+              <div className="text-left">
+                <p className="text-[#8b6f47] text-sm font-medium mb-2">See it On-Chain</p>
+                <div className="bg-gray-50 rounded-lg p-3 flex items-center justify-between">
+                  <div>
+                    <div className="text-[#8b6f47] font-mono text-sm">Txn: 0x8c...a7</div>
+                    <div className="text-gray-500 text-xs">Hash • Block 231652</div>
+                  </div>
+                  <Button className="bg-white hover:bg-gray-100 text-[#8b6f47] px-3 py-1 rounded text-xs font-medium flex items-center gap-1">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+                      <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                    Explorer
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
