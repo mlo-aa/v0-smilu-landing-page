@@ -16,8 +16,16 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f3f0]">
-      <div className={`transition-all duration-300 ${isMenuOpen ? "blur-sm" : ""}`}>
+    <div className="min-h-screen bg-[#f5f3f0] relative overflow-hidden">
+      {/* Subtle gradient spots */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#bbdce5] rounded-full opacity-40 blur-3xl"></div>
+        <div className="absolute top-1/3 right-20 w-80 h-80 bg-[#bbdce5] rounded-full opacity-35 blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-[#bbdce5] rounded-full opacity-38 blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#bbdce5] rounded-full opacity-30 blur-3xl"></div>
+      </div>
+
+      <div className={`transition-all duration-300 ${isMenuOpen ? "blur-sm" : ""} relative z-10`}>
         <div className="px-6 py-8">
           {/* Header */}
           <header className="flex items-center justify-between mb-16">
@@ -41,8 +49,10 @@ export default function Home() {
           <div className="flex items-center justify-between max-w-7xl mx-auto min-h-[80vh]">
             {/* Left Side Content */}
             <div className="flex-1 max-w-2xl">
-              <h1 className="text-[#8b6f47] text-6xl font-bold mb-4 leading-tight">Their smile starts with you.</h1>
-              <p className="text-[#8b6f47] text-xl mb-12 font-light">One click, one token, one smile.</p>
+              <h1 className="text-black text-6xl font-bold mb-4 leading-tight font-nunito">
+                Their smile starts with you.
+              </h1>
+              <p className="text-[#55361e] text-xl mb-12 font-light font-nunito">One click, one token, one smile.</p>
 
               <Link href="/dashboard">
                 <Button className="bg-[#a8d5d8] hover:bg-[#96c9cc] text-white px-8 py-6 rounded-full text-lg font-medium flex items-center gap-2">
@@ -78,16 +88,16 @@ export default function Home() {
                 <div className="border-2 border-black rounded-2xl p-8 bg-white">
                   <div className="space-y-6">
                     <div>
-                      <div className="text-4xl font-bold text-black">+120</div>
-                      <div className="text-lg text-black">toys delivered</div>
+                      <div className="text-4xl font-bold text-black font-nunito">+120</div>
+                      <div className="text-lg text-black font-nunito">toys delivered</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-black">+5</div>
-                      <div className="text-lg text-black">communities</div>
+                      <div className="text-4xl font-bold text-black font-nunito">+5</div>
+                      <div className="text-lg text-black font-nunito">communities</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-black">+5</div>
-                      <div className="text-lg text-black">partners</div>
+                      <div className="text-4xl font-bold text-black font-nunito">+5</div>
+                      <div className="text-lg text-black font-nunito">partners</div>
                     </div>
                   </div>
                 </div>
@@ -96,8 +106,10 @@ export default function Home() {
 
             {/* Right Side - Mission Text */}
             <div className="flex-1 max-w-2xl ml-16">
-              <h2 className="text-[#8b6f47] text-5xl font-bold mb-8 leading-tight">One chain, endless smile</h2>
-              <p className="text-[#8b6f47] text-xl font-light leading-relaxed">
+              <h2 className="text-[#55361e] text-5xl font-bold mb-8 leading-tight font-nunito">
+                One chain, endless smile
+              </h2>
+              <p className="text-[#8b6f47] text-xl font-light leading-relaxed font-nunito">
                 1 in 3 children in Costa Rica live in poverty. In the first year, Smilu aim to create global smiles.
               </p>
             </div>

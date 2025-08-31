@@ -38,6 +38,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --font-sweet-apricot: var(--font-sweet-apricot);
+  --font-nunito: var(--font-nunito);
 }
 
 .dark {
@@ -74,12 +75,14 @@
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
   --font-sweet-apricot: var(--font-sweet-apricot);
+  --font-nunito: var(--font-nunito);
 }
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-sweet-apricot: var(--font-sweet-apricot);
+  --font-nunito: var(--font-nunito);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

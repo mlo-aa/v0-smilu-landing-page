@@ -91,8 +91,8 @@ export default function SmileBuilder() {
           {/* Main Content Area */}
           <div className="flex-1 px-8 py-6">
             <div className="max-w-2xl mx-auto">
-              <h1 className="text-[#8b6f47] text-4xl mb-4 text-center font-sweet-apricot">Smile Builder</h1>
-              <p className="text-[#8b6f47] text-lg mb-8 text-center">Smile Builder kit</p>
+              <h1 className="text-[#55361e] text-4xl mb-4 text-center font-nunito">Smile Builder</h1>
+              <p className="text-[#55361e] text-lg mb-8 text-center font-nunito">Smile Builder kit</p>
 
               {/* Kit Cards */}
               <div className="space-y-6 flex flex-col items-center">

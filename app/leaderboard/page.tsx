@@ -96,7 +96,7 @@ export default function Leaderboard() {
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col items-center px-8 py-8">
           {/* Title */}
-          <h1 className="text-[#8b6f47] text-4xl font-bold mb-12 font-sweet-apricot">Top Smilers</h1>
+          <h1 className="text-[#55361e] text-4xl font-bold mb-12 font-nunito">Top Smilers</h1>
 
           {/* Podium Section */}
           <div className="flex items-end justify-center gap-8 mb-16">

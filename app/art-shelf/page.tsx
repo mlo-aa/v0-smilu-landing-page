@@ -22,7 +22,7 @@ export default function ArtShelf() {
         <Link href="/dashboard">
           <div className="w-12 h-12 bg-[#8b6f47] rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer p-1">
             <img
-              src="https://github.com/mlo-aa/v0-smilu-landing-page/blob/0b52ed9d5ea49d74d914e1b3e83c7d0929edb642/public/imagenes/oso%20topleftrow.png"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%285%29-G4uEd.png"
               alt="Teddy Bear"
               className="w-full h-full object-contain"
             />
@@ -123,7 +123,7 @@ export default function ArtShelf() {
 
         {/* Main Content Area */}
         <div className="flex-1 px-8 pb-8">
-          <h1 className="text-[#8b6f47] text-2xl font-bold mb-8">My art shelf.</h1>
+          <h1 className="text-black text-2xl font-bold mb-8 font-nunito">My art shelf.</h1>
 
           <div className="flex gap-8">
             {/* Left Side - Art Grid */}
@@ -211,7 +211,7 @@ export default function ArtShelf() {
             {/* Right Side - Celebrating Bear */}
             <div className="flex items-center justify-center">
               <img
-                src="public/imagenes/oso_fiesta_galeria.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oso%20fiesta%20galeria-JT2ba7Ley9NnsI0ok7HaghO0eyxqux.png"
                 alt="Celebrating Bear"
                 className="w-64 h-auto"
               />

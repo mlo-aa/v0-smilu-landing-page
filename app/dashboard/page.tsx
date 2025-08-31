@@ -189,21 +189,15 @@ export default function Dashboard() {
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col items-center justify-center px-8">
           {/* Golden Token */}
-          <div className="w-32 h-32 bg-gradient-to-br from-[#f4d03f] to-[#f39c12] rounded-full flex items-center justify-center mb-8 shadow-lg">
-            <div className="w-24 h-24 border-4 border-[#d4ac0d] rounded-full flex items-center justify-center">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="8" cy="8" r="3" fill="#8b4513" />
-                <circle cx="16" cy="8" r="3" fill="#8b4513" />
-                <circle cx="12" cy="14" r="6" fill="#8b4513" />
-                <circle cx="10" cy="12" r="1" fill="white" />
-                <circle cx="14" cy="12" r="1" fill="white" />
-                <path d="M11 15 Q12 16 13 15" stroke="white" strokeWidth="1" fill="none" />
-              </svg>
-            </div>
+          <div className="w-[200px] h-[200px] flex items-center justify-center mb-8">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-WEtfLgFop1T90VkEiEMEYuFCL3znU2.png"
+              alt="Smilu Token"
+              className="w-full h-full object-contain"
+            />
           </div>
 
-          {/* Token Text */}
-          <h1 className="text-[#8b6f47] text-2xl font-bold mb-8">1 Token = 1 New toy delivered</h1>
+          <h1 className="text-black text-2xl font-bold mb-8 font-nunito">1 Token = 1 New toy delivered</h1>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4 mb-12">
@@ -241,7 +235,7 @@ export default function Dashboard() {
 
           {/* Why Smilu Section */}
           <div className="w-full max-w-4xl mt-16">
-            <h2 className="text-[#8b6f47] text-2xl font-bold text-center mb-8">Why Smilu</h2>
+            <h2 className="text-[#55361e] text-2xl font-bold text-center mb-8 font-nunito">Why Smilu</h2>
             <div className="flex items-center justify-center space-x-8">
               {/* Child History Button */}
               <button
@@ -326,8 +320,7 @@ export default function Dashboard() {
               </svg>
             </button>
 
-            {/* Modal Header */}
-            <h3 className="text-[#8b6f47] text-2xl font-bold mb-6">{activeModal}</h3>
+            <h3 className="text-[#55361e] text-2xl font-bold mb-6 font-nunito">{activeModal}</h3>
 
             {/* Modal Body */}
             {activeModal === "Perks" ? (
@@ -503,7 +496,7 @@ export default function Dashboard() {
               </svg>
             </button>
 
-            <h3 className="text-[#8b6f47] text-2xl font-bold mb-6 text-center">Buy Tokens</h3>
+            <h3 className="text-[#55361e] text-2xl font-bold mb-6 text-center font-nunito">Buy Tokens</h3>
 
             <div className="mb-6">
               <label className="block text-[#8b6f47] text-sm font-medium mb-2">
@@ -548,7 +541,7 @@ export default function Dashboard() {
             </button>
 
             <div className="text-center">
-              <h3 className="text-[#8b6f47] text-2xl font-bold mb-6">Success</h3>
+              <h3 className="text-[#55361e] text-2xl font-bold mb-6 font-nunito">Success</h3>
 
               {/* Green Checkmark */}
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -563,7 +556,7 @@ export default function Dashboard() {
                 </svg>
               </div>
 
-              <h4 className="text-[#8b6f47] text-xl font-semibold mb-2">Payment Confirmed</h4>
+              <h4 className="text-[#55361e] text-xl font-semibold mb-2 font-nunito">Payment Confirmed</h4>
               <p className="text-gray-600 text-sm mb-8">
                 {tokenAmount} Toy{tokenAmount !== 1 ? "s" : ""} to be delivered in Costa Rica • On-chain receipt created
               </p>

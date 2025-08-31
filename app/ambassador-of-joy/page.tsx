@@ -102,8 +102,8 @@ export default function AmbassadorOfJoy() {
           {/* Main Content Area */}
           <div className="flex-1 px-8 py-6">
             <div className="max-w-6xl mx-auto">
-              <h1 className="text-[#8b6f47] text-4xl mb-4 text-center font-sweet-apricot">Ambassador of joy</h1>
-              <p className="text-[#8b6f47] text-lg mb-8 text-center">Your ambassador kit</p>
+              <h1 className="text-[#55361e] text-4xl mb-4 text-center font-nunito">Ambassador of joy</h1>
+              <p className="text-[#55361e] text-lg mb-8 text-center font-nunito">Your ambassador kit</p>
 
               {/* Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">

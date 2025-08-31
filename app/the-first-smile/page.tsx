@@ -92,8 +92,8 @@ export default function TheFirstSmile() {
           {/* Main Content Area */}
           <div className="flex-1 px-8 py-8">
             <div className="max-w-2xl mx-auto">
-              <h1 className="text-[#8b6f47] text-4xl font-bold mb-2 text-center font-serif">The first Smile</h1>
-              <p className="text-[#8b6f47] text-lg mb-12 text-center">First smile kit</p>
+              <h1 className="text-[#55361e] text-4xl font-bold mb-2 text-center font-nunito">The first Smile</h1>
+              <p className="text-[#55361e] text-lg mb-12 text-center font-nunito">First smile kit</p>
 
               <div className="space-y-6 mb-8 flex flex-col items-center">
                 {/* Social Certificate Card */}
