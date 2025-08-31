@@ -204,7 +204,7 @@ export default function ArtShelf() {
 
               {/* Bottom Row - Empty Shelf */}
               <div className="bg-white rounded-2xl p-12 border-2 border-gray-200 text-center">
-                <p className="text-[#8b6f47] text-lg">Empty shelf - Mind your next smile</p>
+                <p className="text-[#8b6f47] text-lg">Empty shel - Mind your next smile</p>
               </div>
             </div>
 
