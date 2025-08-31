@@ -227,9 +227,14 @@ export default function AmbassadorOfJoy() {
                     <div className="flex-1">
                       <h3 className="text-[#2c3e50] text-lg font-semibold mb-2">Invitations to events</h3>
                       <p className="text-gray-600 text-sm mb-4">Participate in exclusive ambassador events.</p>
-                      <Button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">
+                      <a
+                        href="https://luma.com/Smilu?k=c&period=pastx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm inline-block text-center no-underline"
+                      >
                         View agenda
-                      </Button>
+                      </a>
                     </div>
                   </div>
                 </div>

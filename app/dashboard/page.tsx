@@ -89,11 +89,11 @@ export default function Dashboard() {
         </div>
 
         {/* Gift Box Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
+        <div className="w-12 h-12 bg-[#bbdce5] rounded-lg flex items-center justify-center cursor-pointer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="8" width="18" height="12" rx="2" stroke="gray" strokeWidth="2" fill="none" />
-            <path d="M12 8V20" stroke="gray" strokeWidth="2" />
-            <path d="M8 8C8 6 9 4 12 4C15 4 16 6 16 8" stroke="gray" strokeWidth="2" fill="none" />
+            <rect x="3" y="8" width="18" height="12" rx="2" stroke="#8b6f47" strokeWidth="2" fill="none" />
+            <path d="M12 8V20" stroke="#8b6f47" strokeWidth="2" />
+            <path d="M8 8C8 6 9 4 12 4C15 4 16 6 16 8" stroke="#8b6f47" strokeWidth="2" fill="none" />
           </svg>
         </div>
 

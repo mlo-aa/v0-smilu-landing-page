@@ -164,9 +164,14 @@ export default function SmileBuilder() {
                       <p className="text-gray-600 text-sm">Participate in exclusive ambassador events.</p>
                     </div>
                   </div>
-                  <Button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg text-sm">
+                  <a
+                    href="https://luma.com/Smilu?k=c&period=pastx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg text-sm inline-block text-center no-underline"
+                  >
                     View agenda
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>

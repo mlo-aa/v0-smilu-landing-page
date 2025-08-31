@@ -1,8 +1,19 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 
 export default function ArtShelf() {
+  const [showRolesPopup, setShowRolesPopup] = useState(false)
+
+  const toggleRolesPopup = () => {
+    setShowRolesPopup(!showRolesPopup)
+  }
+
+  const closeRolesPopup = () => {
+    setShowRolesPopup(false)
+  }
+
   return (
     <div className="min-h-screen bg-[#f5f3f0] flex">
       {/* Left Sidebar */}
@@ -18,14 +29,15 @@ export default function ArtShelf() {
           </div>
         </Link>
 
-        {/* Gift Box Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="8" width="18" height="12" rx="2" stroke="gray" strokeWidth="2" fill="none" />
-            <path d="M12 8V20" stroke="gray" strokeWidth="2" />
-            <path d="M8 8C8 6 9 4 12 4C15 4 16 6 16 8" stroke="gray" strokeWidth="2" fill="none" />
-          </svg>
-        </div>
+        <Link href="/dashboard">
+          <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="8" width="18" height="12" rx="2" stroke="gray" strokeWidth="2" fill="none" />
+              <path d="M12 8V20" stroke="gray" strokeWidth="2" />
+              <path d="M8 8C8 6 9 4 12 4C15 4 16 6 16 8" stroke="gray" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+        </Link>
 
         {/* Palette Icon - Active */}
         <div className="w-12 h-12 bg-[#bbdce5] rounded-lg flex items-center justify-center cursor-pointer">
@@ -37,28 +49,62 @@ export default function ArtShelf() {
           </svg>
         </div>
 
-        {/* Star with Podium Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon
-              points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
-              stroke="gray"
-              strokeWidth="2"
-              fill="none"
-            />
-            <rect x="8" y="18" width="8" height="4" stroke="gray" strokeWidth="2" fill="none" />
-          </svg>
-        </div>
+        <Link href="/leaderboard">
+          <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon
+                points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
+                stroke="gray"
+                strokeWidth="2"
+                fill="none"
+              />
+              <rect x="8" y="18" width="8" height="4" stroke="gray" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+        </Link>
 
         {/* Spacer */}
         <div className="flex-1"></div>
 
-        {/* User/Settings Icon */}
-        <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="4" stroke="gray" strokeWidth="2" fill="none" />
-            <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="gray" strokeWidth="2" />
-          </svg>
+        <div className="relative">
+          <div
+            onClick={toggleRolesPopup}
+            className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="8" r="4" stroke="gray" strokeWidth="2" fill="none" />
+              <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="gray" strokeWidth="2" />
+            </svg>
+          </div>
+
+          {/* Roles Popup */}
+          {showRolesPopup && (
+            <>
+              {/* Backdrop to close popup when clicking outside */}
+              <div className="fixed inset-0 z-40" onClick={closeRolesPopup}></div>
+
+              <div className="absolute left-16 bottom-0 bg-white border-2 border-gray-200 rounded-xl shadow-lg p-4 min-w-[200px] z-50">
+                <h3 className="text-[#8b6f47] font-semibold text-lg mb-3">Roles</h3>
+                <div className="space-y-2">
+                  <Link href="/the-first-smile" onClick={closeRolesPopup}>
+                    <div className="w-full text-left px-4 py-3 text-[#8b6f47] hover:bg-[#bbdce5] rounded-lg transition-colors duration-200 cursor-pointer">
+                      The First Smile
+                    </div>
+                  </Link>
+                  <Link href="/smile-builder" onClick={closeRolesPopup}>
+                    <div className="w-full text-left px-4 py-3 text-[#8b6f47] hover:bg-[#bbdce5] rounded-lg transition-colors duration-200 cursor-pointer">
+                      Smile Builder
+                    </div>
+                  </Link>
+                  <Link href="/ambassador-of-joy" onClick={closeRolesPopup}>
+                    <div className="w-full text-left px-4 py-3 text-[#8b6f47] hover:bg-[#bbdce5] rounded-lg transition-colors duration-200 cursor-pointer">
+                      Ambassador of joy
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
