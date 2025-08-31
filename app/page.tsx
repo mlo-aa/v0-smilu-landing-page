@@ -52,7 +52,7 @@ export default function Home() {
               <h1 className="text-black text-6xl font-bold mb-4 leading-tight font-nunito">
                 Their smile starts with you.
               </h1>
-              <p className="text-[#55361e] text-xl mb-12 font-light font-nunito">One click, one token, one smile.</p>
+              <p className="text-[#55361e] text-xl mb-12 font-light font-nunito">One click, one token, one smile</p>
 
               <Link href="/dashboard">
                 <Button className="bg-[#a8d5d8] hover:bg-[#96c9cc] text-white px-8 py-6 rounded-full text-lg font-medium flex items-center gap-2">
@@ -72,7 +72,14 @@ export default function Home() {
 
             {/* Right Side - Video Placeholder */}
             <div className="flex-1 flex items-center justify-end">
-              <div className="w-[500px] h-[300px] bg-black rounded-2xl"></div>
+              <iframe
+                className="w-[500px] h-[300px] rounded-2xl"
+                src="https://www.youtube.com/embed/V02N697KKB0"
+                title="Smilu Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
@@ -85,7 +92,7 @@ export default function Home() {
             <div className="flex-1 max-w-xs">
               <div className="relative">
                 {/* Statistics card */}
-                <div className="border-2 border-black rounded-2xl p-8 bg-white">
+                <div className="border-2 border-black rounded-2xl p-8 bg-white shadow-md w-72">
                   <div className="space-y-6">
                     <div>
                       <div className="text-4xl font-bold text-black font-nunito">+120</div>

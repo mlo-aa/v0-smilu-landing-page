@@ -82,19 +82,18 @@ export default function Dashboard() {
         {/* Teddy Bear Icon */}
         <div className="w-12 h-12 bg-[#8b6f47] rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer p-1">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%285%29-G4uEd.png"
-            alt="Teddy Bear"
+            src="https://github.com/mlo-aa/v0-smilu-landing-page/blob/af232a4e3d79af2c0befa2ad9e708df957809259/public/images/osotopleftrow.png"
             className="w-full h-full object-contain"
           />
         </div>
 
         {/* Gift Box Icon */}
-        <div className="w-12 h-12 bg-[#bbdce5] rounded-lg flex items-center justify-center cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="8" width="18" height="12" rx="2" stroke="#8b6f47" strokeWidth="2" fill="none" />
-            <path d="M12 8V20" stroke="#8b6f47" strokeWidth="2" />
-            <path d="M8 8C8 6 9 4 12 4C15 4 16 6 16 8" stroke="#8b6f47" strokeWidth="2" fill="none" />
-          </svg>
+        <div className="w-12 h-12 bg-[#bbdce5] rounded-lg flex items-center justify-center">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%285%29-QkFX6N8VYsoNL0SEYJ82RMMQQQczou.png"
+            alt="Gift Box"
+            className="w-10 h-10 object-contain"
+          />
         </div>
 
         {/* Palette Icon */}
@@ -189,7 +188,7 @@ export default function Dashboard() {
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col items-center justify-center px-8">
           {/* Golden Token */}
-          <div className="w-[200px] h-[200px] flex items-center justify-center mb-8">
+          <div className="flex items-center justify-center mb-8 w-[300px] h-[200px3]">
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%282%29-WEtfLgFop1T90VkEiEMEYuFCL3znU2.png"
               alt="Smilu Token"

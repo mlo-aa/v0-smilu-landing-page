@@ -18,16 +18,14 @@ export default function ArtShelf() {
     <div className="min-h-screen bg-[#f5f3f0] flex">
       {/* Left Sidebar */}
       <div className="w-20 bg-white border-r border-gray-200 flex flex-col items-center py-8 space-y-8">
-        {/* Teddy Bear Icon */}
-        <Link href="/dashboard">
-          <div className="w-12 h-12 bg-[#8b6f47] rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer p-1">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%285%29-G4uEd.png"
-              alt="Teddy Bear"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </Link>
+        {/* Smilu Bear Logo */}
+        <div className="flex items-center justify-center w-96 h-20">
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-L9rqHm3Dsze2AKVWANgkXi9doNhfBl.png"
+            alt="Smilu Bear Logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
 
         <Link href="/dashboard">
           <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-[#bbdce5] transition-colors duration-200 cursor-pointer">
@@ -130,81 +128,31 @@ export default function ArtShelf() {
             <div className="flex-1 space-y-6">
               {/* Top Row - 3 drawings */}
               <div className="bg-white rounded-2xl p-6 border-2 border-gray-200">
-                <div className="flex gap-4 justify-center">
-                  {/* Turtle Drawing */}
-                  <div className="w-32 h-32 bg-white border-2 border-black rounded-lg p-2 flex items-center justify-center">
-                    <div className="relative">
-                      <div className="w-20 h-16 bg-green-500 rounded-full"></div>
-                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-400 rounded-full"></div>
-                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full"></div>
-                      <div className="absolute -left-2 top-4 w-6 h-4 bg-green-400 rounded-full"></div>
-                      <div className="absolute -right-2 top-4 w-6 h-4 bg-green-400 rounded-full"></div>
-                      <div className="absolute -bottom-2 -left-1 w-6 h-4 bg-green-400 rounded-full"></div>
-                      <div className="absolute -bottom-2 -right-1 w-6 h-4 bg-green-400 rounded-full"></div>
-                    </div>
-                  </div>
-
-                  {/* Children Holding Hands Drawing */}
-                  <div className="w-32 h-32 bg-white border-2 border-black rounded-lg p-2 flex items-center justify-center">
-                    <div className="flex items-end gap-2">
-                      {/* Girl */}
-                      <div className="flex flex-col items-center">
-                        <div className="w-6 h-6 bg-pink-200 rounded-full mb-1"></div>
-                        <div className="w-2 h-8 bg-pink-400 rounded"></div>
-                        <div className="w-8 h-4 bg-pink-400 rounded-b-full"></div>
-                        <div className="flex gap-1 mt-1">
-                          <div className="w-1 h-4 bg-pink-300"></div>
-                          <div className="w-1 h-4 bg-pink-300"></div>
-                        </div>
-                      </div>
-                      {/* Boy */}
-                      <div className="flex flex-col items-center">
-                        <div className="w-6 h-6 bg-blue-200 rounded-full mb-1"></div>
-                        <div className="w-2 h-8 bg-red-400 rounded"></div>
-                        <div className="w-8 h-4 bg-blue-400 rounded-b-full"></div>
-                        <div className="flex gap-1 mt-1">
-                          <div className="w-1 h-4 bg-blue-300"></div>
-                          <div className="w-1 h-4 bg-blue-300"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Star Drawing */}
-                  <div className="w-32 h-32 bg-white border-2 border-black rounded-lg p-2 flex items-center justify-center">
-                    <div className="relative">
-                      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon
-                          points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"
-                          fill="#fbbf24"
-                          stroke="#f59e0b"
-                          strokeWidth="1"
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                <div className="flex justify-center">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%283%29-WxapP8U9Bt2Jynt2DiExJ8qYHMwsBc.png"
+                    alt="Children's Drawings - Turtle, Kids Holding Hands, and Star"
+                    className="w-auto h-48 object-contain"
+                  />
                 </div>
               </div>
 
               {/* Middle Row - 1 drawing */}
               <div className="bg-white rounded-2xl p-6 border-2 border-gray-200">
                 <div className="flex justify-center">
-                  {/* Car Drawing */}
-                  <div className="w-32 h-32 bg-white border-2 border-black rounded-lg p-2 flex items-center justify-center">
-                    <div className="relative">
-                      <div className="w-16 h-8 bg-red-500 rounded-t-full"></div>
-                      <div className="w-20 h-6 bg-red-400 rounded-b-lg"></div>
-                      <div className="absolute top-2 left-2 w-4 h-3 bg-blue-400 rounded"></div>
-                      <div className="absolute -bottom-2 left-2 w-4 h-4 bg-black rounded-full"></div>
-                      <div className="absolute -bottom-2 right-2 w-4 h-4 bg-black rounded-full"></div>
-                    </div>
-                  </div>
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%284%29-6haMe5zQybNVj47G1Vt6yM0BoXytbM.png"
+                    alt="Child's Car Drawing"
+                    className="w-auto h-48 object-contain"
+                  />
                 </div>
               </div>
 
               {/* Bottom Row - Empty Shelf */}
-              <div className="bg-white rounded-2xl p-12 border-2 border-gray-200 text-center">
-                <p className="text-[#8b6f47] text-lg">Empty shelf - Mind your next smile</p>
+              <div className="bg-white rounded-2xl p-12 border-2 border-gray-200 h-44 justify-center text-center">
+                <p className="text-[#8b6f47] text-lg flex-col justify-center my-6">
+                  Empty shelf - Mind your next smile
+                </p>
               </div>
             </div>
 
@@ -213,7 +161,7 @@ export default function ArtShelf() {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oso%20fiesta%20galeria-JT2ba7Ley9NnsI0ok7HaghO0eyxqux.png"
                 alt="Celebrating Bear"
-                className="w-64 h-auto"
+                className="w-[550px] h-auto"
               />
             </div>
           </div>
