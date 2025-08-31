@@ -211,7 +211,7 @@ export default function ArtShelf() {
             {/* Right Side - Celebrating Bear */}
             <div className="flex items-center justify-center">
               <img
-                src="public/imagenes/oso fiesta galeria.png"
+                src="public/imagenes/oso_fiesta_galeria.png"
                 alt="Celebrating Bear"
                 className="w-64 h-auto"
               />
