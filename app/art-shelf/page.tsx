@@ -211,7 +211,7 @@ export default function ArtShelf() {
             {/* Right Side - Celebrating Bear */}
             <div className="flex items-center justify-center">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Agregar%20un%20subt%C3%ADtulo%20%283%29-uceYd.png"
+                src="public/imagenes/oso fiesta galeria.png"
                 alt="Celebrating Bear"
                 className="w-64 h-auto"
               />
