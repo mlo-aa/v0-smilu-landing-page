@@ -7,6 +7,7 @@ import { useState } from "react"
 export default function AmbassadorOfJoy() {
   const [innovativeIdea, setInnovativeIdea] = useState("")
   const [showIdeaSent, setShowIdeaSent] = useState(false)
+  const [showCertificate, setShowCertificate] = useState(false)
 
   const handleSendIdea = () => {
     if (innovativeIdea.trim()) {
@@ -18,7 +19,7 @@ export default function AmbassadorOfJoy() {
 
   return (
     <div className="min-h-screen bg-[#f5f3f0] flex">
-      <div className={`${showIdeaSent ? "blur-sm" : ""} transition-all duration-300 w-full flex`}>
+      <div className={`${showIdeaSent || showCertificate ? "blur-sm" : ""} transition-all duration-300 w-full flex`}>
         {/* Left Sidebar */}
         <div className="w-20 bg-white border-r border-gray-200 flex flex-col items-center py-8 space-y-8">
           {/* Teddy Bear Icon */}
@@ -121,7 +122,10 @@ export default function AmbassadorOfJoy() {
                       <p className="text-gray-600 text-sm mb-4">
                         On-chain document that certifies your verified impact.
                       </p>
-                      <Button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">
+                      <Button
+                        onClick={() => setShowCertificate(true)}
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm"
+                      >
                         View certificate
                       </Button>
                     </div>
@@ -164,9 +168,14 @@ export default function AmbassadorOfJoy() {
                     <div className="flex-1">
                       <h3 className="text-[#2c3e50] text-lg font-semibold mb-2">Exclusive community</h3>
                       <p className="text-gray-600 text-sm mb-4">Access to private groups and Ambassador forums.</p>
-                      <Button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">
+                      <a
+                        href="https://t.me/+1ifPlcA6ZLk0ZDYx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm inline-block text-center no-underline"
+                      >
                         Enter
-                      </Button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -272,6 +281,7 @@ export default function AmbassadorOfJoy() {
         </div>
       </div>
 
+      {/* Idea Sent Popup */}
       {showIdeaSent && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200 max-w-sm mx-4">
@@ -288,6 +298,27 @@ export default function AmbassadorOfJoy() {
                 </svg>
               </div>
               <h3 className="text-[#8b6f47] text-xl font-semibold">Idea Sent</h3>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Certificate Popup */}
+      {showCertificate && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto relative">
+            <button
+              onClick={() => setShowCertificate(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10"
+            >
+              ×
+            </button>
+            <div className="p-4">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/certificate-of-social-impact-JWEM0D7HwgXktrvMYwWv5YHksvftvC.png"
+                alt="Certificate of Social Impact"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
